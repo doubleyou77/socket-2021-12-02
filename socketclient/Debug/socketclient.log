@@ -1,10 +1,10 @@
 ﻿  client.c
-C:\Users\khj\Desktop\socket (2)\socketclient\client.c(22,32): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-  socketclient.vcxproj -> C:\Users\khj\Desktop\socket (2)\Debug\socketclient.exe
+C:\Users\khj\Desktop\socket 제출용\socketclient\client.c(22,32): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  socketclient.vcxproj -> C:\Users\khj\Desktop\socket 제출용\Debug\socketclient.exe
 
 프로젝트 성능 요약:
-      710ms  C:\Users\khj\Desktop\socket (2)\socketclient\socketclient.vcxproj   1회 호출
-                710ms  Build                                      1회 호출
+      559ms  C:\Users\khj\Desktop\socket 제출용\socketclient\socketclient.vcxproj   1회 호출
+                559ms  Build                                      1회 호출
 
 대상 성능 요약:
         0ms  _BuildCompileAction                        1회 호출
@@ -16,9 +16,9 @@ C:\Users\khj\Desktop\socket (2)\socketclient\client.c(22,32): warning C4996: 'in
         0ms  ComputeLinkSwitches                        1회 호출
         0ms  PreLinkEvent                               1회 호출
         0ms  DoLinkOutputFilesMatch                     1회 호출
-        0ms  MakeDirsForLink                            1회 호출
         0ms  PrepareResourceNames                       1회 호출
         0ms  CreateCustomManifestResourceNames          1회 호출
+        0ms  SplitResourcesByCulture                    1회 호출
         0ms  RegisterOutput                             1회 호출
         0ms  AssignTargetPaths                          1회 호출
         0ms  ComputeLinkInputsFromProject               1회 호출
@@ -35,7 +35,7 @@ C:\Users\khj\Desktop\socket (2)\socketclient\client.c(22,32): warning C4996: 'in
         0ms  ComputeManifestInputsTargets               1회 호출
         0ms  _ResourceCompile                           1회 호출
         0ms  ResolvedXDCMake                            1회 호출
-        0ms  _XdcMake                                   1회 호출
+        0ms  MakeDirsForXdcMake                         1회 호출
         0ms  IncrementalClean                           1회 호출
         0ms  AfterBuild                                 1회 호출
         0ms  BuildLink                                  1회 호출
@@ -43,13 +43,12 @@ C:\Users\khj\Desktop\socket (2)\socketclient\client.c(22,32): warning C4996: 'in
         0ms  PostBuildEvent                             1회 호출
         0ms  PrepareForRun                              1회 호출
         0ms  CopyFilesToOutputDirectory                 1회 호출
-        0ms  _CheckForCompileOutputs                    1회 호출
         0ms  _CopySourceItemsToOutputDirectory          1회 호출
         0ms  _GetCopyToOutputDirectoryItemsFromThisProject   1회 호출
         0ms  _GetCopyToOutputDirectoryItemsFromTransitiveProjectReferences   1회 호출
-        0ms  MakeDirsForXdcMake                         1회 호출
         0ms  GetCopyToOutputDirectoryXamlAppDefs        1회 호출
-        0ms  _Deploy                                    1회 호출
+        0ms  ComputeCLCompileGeneratedXDCFiles          1회 호출
+        0ms  _PopulateCommonStateForGetCopyToOutputDirectoryItems   1회 호출
         0ms  _Appverifier                               1회 호출
         0ms  CreateSatelliteAssemblies                  1회 호출
         0ms  _GenerateSatelliteAssemblyInputs           1회 호출
@@ -60,91 +59,92 @@ C:\Users\khj\Desktop\socket (2)\socketclient\client.c(22,32): warning C4996: 'in
         0ms  _BscMake                                   1회 호출
         0ms  MakeDirsForBscMake                         1회 호출
         0ms  ComputeCLCompileGeneratedSbrFiles          1회 호출
-        0ms  _PopulateCommonStateForGetCopyToOutputDirectoryItems   1회 호출
+        0ms  _XdcMake                                   1회 호출
+        0ms  _Deploy                                    1회 호출
         0ms  AfterResourceCompile                       1회 호출
         0ms  Build                                      1회 호출
         0ms  BeforeResourceCompile                      1회 호출
-        0ms  CopyFileToFolders                          1회 호출
-        0ms  ComputeCustomBuildOutput                   1회 호출
         0ms  SelectCustomBuild                          1회 호출
         0ms  MakeDirsForResourceCompile                 1회 호출
-        0ms  _SelectedFiles                             1회 호출
         0ms  PreBuildEvent                              1회 호출
         0ms  BeforeBuildGenerateSources                 1회 호출
         0ms  BuildGenerateSourcesTraverse               1회 호출
-        0ms  AssignProjectConfiguration                 1회 호출
-        0ms  ResolveProjectReferences                   1회 호출
         0ms  ResolveReferences                          1회 호출
+        0ms  AfterResolveReferences                     1회 호출
         0ms  ResolveAssemblyReferences                  1회 호출
         0ms  ExpandSDKReferences                        1회 호출
         0ms  ResolveSDKReferences                       1회 호출
-        0ms  _SplitProjectReferencesByFileExistence     1회 호출
+        0ms  ComputeCustomBuildOutput                   1회 호출
         0ms  SetCABuildNativeEnvironmentVariables       1회 호출
-        0ms  _CheckWindowsSDKInstalled                  1회 호출
         0ms  GetResolvedWinMD                           1회 호출
         0ms  GetReferenceAssemblyPaths                  1회 호출
         0ms  GetFrameworkPaths                          1회 호출
-        0ms  AfterResolveReferences                     1회 호출
-        0ms  MakeDirsForMidl                            1회 호출
-        0ms  _Xsd                                       1회 호출
+        0ms  PrepareProjectReferences                   1회 호출
+        0ms  _GetProjectReferenceTargetFrameworkProperties   1회 호출
+        0ms  _SplitProjectReferencesByFileExistence     1회 호출
+        0ms  AssignProjectConfiguration                 1회 호출
         0ms  BeforeResolveReferences                    1회 호출
-        0ms  _ClCompile                                 1회 호출
+        0ms  _PrepareForReferenceResolution             1회 호출
         0ms  SetTelemetryEnvironmentVariables           1회 호출
+        0ms  _CheckWindowsSDKInstalled                  1회 호출
+        0ms  CopyFileToFolders                          1회 호출
+        0ms  _SelectedFiles                             1회 호출
+        0ms  MakeDirsForMidl                            1회 호출
+        0ms  _ClCompile                                 1회 호출
         0ms  AfterClCompile                             1회 호출
         0ms  SelectClCompile                            1회 호출
         0ms  MakeDirsForCl                              1회 호출
         0ms  FixupCLCompileOptions                      1회 호출
-        0ms  _PrepareForBuild                           1회 호출
         0ms  ComputeReferenceCLInput                    1회 호출
-        0ms  ComputeMIDLGeneratedCompileInputs          1회 호출
-        0ms  FindReferenceAssembliesForReferences       1회 호출
         0ms  GetReferencedVCProjectsInfo                1회 호출
+        0ms  _Xsd                                       1회 호출
+        0ms  ComputeCLInputPDBName                      1회 호출
         0ms  BeforeClCompile                            1회 호출
         0ms  BuildCompileTraverse                       1회 호출
-        0ms  _PrepareForReferenceResolution             1회 호출
-        0ms  BuildGenerateSources                       1회 호출
+        0ms  FindReferenceAssembliesForReferences       1회 호출
         0ms  _BuildGenerateSourcesAction                1회 호출
-        0ms  AfterBuildGenerateSourcesEvent             1회 호출
+        0ms  ComputeMIDLGeneratedCompileInputs          1회 호출
+        0ms  AfterMidl                                  1회 호출
+        0ms  BuildGenerateSources                       1회 호출
         0ms  AfterBuildGenerateSources                  1회 호출
         0ms  _Midl                                      1회 호출
-        0ms  AfterMidl                                  1회 호출
-        0ms  ComputeCLInputPDBName                      1회 호출
-        0ms  PrepareProjectReferences                   1회 호출
-        1ms  CustomBuild                                1회 호출
-        1ms  CreateRecipeFile                           1회 호출
+        0ms  AfterBuildGenerateSourcesEvent             1회 호출
         1ms  GetCopyToOutputDirectoryItems              1회 호출
-        1ms  _CleanGetCurrentAndPriorFileWrites         1회 호출
-        1ms  _GetProjectReferenceTargetFrameworkProperties   1회 호출
-        1ms  _CheckForInvalidConfigurationAndPlatform   1회 호출
-        1ms  SplitResourcesByCulture                    1회 호출
+        1ms  _PrepareForBuild                           1회 호출
         1ms  WarnCompileDuplicatedFilename              1회 호출
-        1ms  ComputeCLCompileGeneratedXDCFiles          1회 호출
+        1ms  _CheckForCompileOutputs                    1회 호출
+        1ms  ResolveProjectReferences                   1회 호출
+        1ms  CustomBuild                                1회 호출
+        1ms  MakeDirsForLink                            1회 호출
+        1ms  _CleanGetCurrentAndPriorFileWrites         1회 호출
+        1ms  _CheckForInvalidConfigurationAndPlatform   1회 호출
+        2ms  FinalizeBuildStatus                        1회 호출
         2ms  PrepareForBuild                            1회 호출
-        3ms  InitializeBuildStatus                      1회 호출
+        2ms  InitializeBuildStatus                      1회 호출
+        2ms  CreateRecipeFile                           1회 호출
         3ms  SetBuildDefaultEnvironmentVariables        1회 호출
-        4ms  FinalizeBuildStatus                        1회 호출
-      127ms  Link                                       1회 호출
-      558ms  ClCompile                                  1회 호출
+      134ms  Link                                       1회 호출
+      401ms  ClCompile                                  1회 호출
 
 작업 성능 요약:
-        0ms  Delete                                     2회 호출
-        0ms  SetEnv                                     8회 호출
-        0ms  AssignProjectConfiguration                 1회 호출
-        0ms  MakeDir                                   10회 호출
-        0ms  ConvertToAbsolutePath                      1회 호출
-        0ms  RemoveDuplicates                           2회 호출
-        0ms  AssignTargetPath                           7회 호출
-        0ms  AssignCulture                              1회 호출
+        0ms  Message                                    3회 호출
+        0ms  FindUnderPath                              5회 호출
         0ms  CreateItem                                 2회 호출
-        1ms  GetOutOfDateItems                          3회 호출
-        1ms  WriteLinesToFile                           1회 호출
-        1ms  GenerateDesktopDeployRecipe                1회 호출
-        1ms  CheckVCToolsetVersion                      1회 호출
-        1ms  ReadLinesFromFile                          2회 호출
+        0ms  AssignCulture                              1회 호출
+        0ms  AssignTargetPath                           7회 호출
+        0ms  RemoveDuplicates                           2회 호출
+        0ms  Delete                                     2회 호출
+        0ms  CheckVCToolsetVersion                      1회 호출
+        0ms  MSBuild                                    1회 호출
+        0ms  AssignProjectConfiguration                 1회 호출
+        0ms  ReadLinesFromFile                          2회 호출
         1ms  CallTarget                                 2회 호출
-        1ms  FindUnderPath                              5회 호출
-        1ms  Message                                    3회 호출
-        1ms  MSBuild                                    1회 호출
-        4ms  Touch                                      2회 호출
-      126ms  Link                                       1회 호출
-      557ms  CL                                         1회 호출
+        1ms  MakeDir                                   10회 호출
+        1ms  GetOutOfDateItems                          3회 호출
+        1ms  ConvertToAbsolutePath                      1회 호출
+        1ms  WriteLinesToFile                           1회 호출
+        2ms  Touch                                      2회 호출
+        2ms  GenerateDesktopDeployRecipe                1회 호출
+        3ms  SetEnv                                     8회 호출
+      132ms  Link                                       1회 호출
+      400ms  CL                                         1회 호출

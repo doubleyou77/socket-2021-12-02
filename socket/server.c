@@ -107,6 +107,7 @@ void AcceptProc(int index)
     printf("%s:%d 입장\n", inet_ntoa(cliaddr.sin_addr), ntohs(cliaddr.sin_port));
 }
 char nicknamesave[10][MAX_MSG_LEN];
+char systemmessage[MAX_MSG_LEN];
 
 void ReadProc(int index)
 {
@@ -118,17 +119,21 @@ void ReadProc(int index)
         strcpy(nickname, msg);
         strcpy(nicknamesave[index], nickname);
         printf("닉네임 수정 : %s\n", nicknamesave[index]);
+        sprintf(systemmessage, "[시스템] 닉네임이 %s로 변경되었습니다.", nicknamesave[index]);
+        send(sock_base[index], systemmessage, MAX_MSG_LEN, 0);
     }
-    SOCKADDR_IN cliaddr = { 0 };
-    int len = sizeof(cliaddr);
-    getpeername(sock_base[index], (SOCKADDR*)&cliaddr, &len);
+    else {
+        SOCKADDR_IN cliaddr = { 0 };
+        int len = sizeof(cliaddr);
+        getpeername(sock_base[index], (SOCKADDR*)&cliaddr, &len);
 
-    char smsg[MAX_MSG_LEN];
-    sprintf(smsg, "[%s]:%s", nicknamesave[index], msg);
+        char smsg[MAX_MSG_LEN];
+        sprintf(smsg, "[%s]:%s", nicknamesave[index], msg);
 
-    for (int i = 1; i < cnt; i++)
-    {
-        send(sock_base[i], smsg, MAX_MSG_LEN, 0);
+        for (int i = 1; i < cnt; i++)
+        {
+            send(sock_base[i], smsg, MAX_MSG_LEN, 0);
+        }
     }
 }
 

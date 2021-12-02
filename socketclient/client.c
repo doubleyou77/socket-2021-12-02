@@ -1,7 +1,7 @@
 #include "common.h"
 #define PORT_NUM      10200
 #define MAX_MSG_LEN   256
-#define SERVER_IP     "192.168.153.1"//서버 IP 주소
+#define SERVER_IP     "192.168.153.1"//서버 IP 주소 /수정하기
 
 void RecvThreadPoint(void* param);
 int count = 0;
@@ -37,7 +37,7 @@ int main()
         Sleep(1);
         gotoxy(45, count2 - 1);
         gotoxy(50, count2);
-        printf("입력 : ");
+        printf("입력중... ");
         gets_s(msg, MAX_MSG_LEN);       //입력
         send(sock, msg, sizeof(msg), 0);//송신
         if (strcmp(msg, "exit") == 0)

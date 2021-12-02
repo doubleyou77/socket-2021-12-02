@@ -1,36 +1,34 @@
 ﻿  server.c
-C:\Users\khj\Desktop\socket (2)\socket\server.c(101,22): warning C4474: 'printf' : 서식 문자열에 전달된 인수가 너무 많습니다.
-C:\Users\khj\Desktop\socket (2)\socket\server.c(101,22): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 0개 필요하지만 2개가 제공되었습니다.
-C:\Users\khj\Desktop\socket (2)\socket\server.c(101,13): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-C:\Users\khj\Desktop\socket (2)\socket\server.c(107,30): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-C:\Users\khj\Desktop\socket (2)\socket\server.c(117,15): warning C4013: 'Remove'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\khj\Desktop\socket (2)\socket\server.c(118,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\khj\Desktop\socket (2)\socket\server.c(119,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\khj\Desktop\socket (2)\socket\server.c(127,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\khj\Desktop\socket (2)\socket\server.c(141,26): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-C:\Users\khj\Desktop\socket (2)\socket\server.c(151,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  socket.vcxproj -> C:\Users\khj\Desktop\socket (2)\Debug\socketserver.exe
+C:\Users\khj\Desktop\socket 제출용\socket\server.c(101,22): warning C4474: 'printf' : 서식 문자열에 전달된 인수가 너무 많습니다.
+C:\Users\khj\Desktop\socket 제출용\socket\server.c(101,22): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 0개 필요하지만 2개가 제공되었습니다.
+C:\Users\khj\Desktop\socket 제출용\socket\server.c(101,13): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+C:\Users\khj\Desktop\socket 제출용\socket\server.c(107,30): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+C:\Users\khj\Desktop\socket 제출용\socket\server.c(118,15): warning C4013: 'Remove'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\khj\Desktop\socket 제출용\socket\server.c(119,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\khj\Desktop\socket 제출용\socket\server.c(120,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\khj\Desktop\socket 제출용\socket\server.c(122,9): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\khj\Desktop\socket 제출용\socket\server.c(131,9): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\khj\Desktop\socket 제출용\socket\server.c(146,26): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+C:\Users\khj\Desktop\socket 제출용\socket\server.c(156,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  socket.vcxproj -> C:\Users\khj\Desktop\socket 제출용\Debug\socketserver.exe
 
 프로젝트 성능 요약:
-      537ms  C:\Users\khj\Desktop\socket (2)\socket\socket.vcxproj   1회 호출
-                537ms  Build                                      1회 호출
+      926ms  C:\Users\khj\Desktop\socket 제출용\socket\socket.vcxproj   1회 호출
+                926ms  Build                                      1회 호출
 
 대상 성능 요약:
         0ms  _BuildCompileAction                        1회 호출
-        0ms  ResolvedXDCMake                            1회 호출
-        0ms  RegisterOutput                             1회 호출
-        0ms  _Manifest                                  1회 호출
         0ms  _ALink                                     1회 호출
         0ms  _Link                                      1회 호출
         0ms  AfterLink                                  1회 호출
+        0ms  ComputeLinkImportLibraryOutputsForClean    1회 호출
         0ms  ComputeLinkSwitches                        1회 호출
         0ms  PreLinkEvent                               1회 호출
         0ms  DoLinkOutputFilesMatch                     1회 호출
         0ms  PrepareResourceNames                       1회 호출
         0ms  CreateCustomManifestResourceNames          1회 호출
-        0ms  ComputeCLCompileGeneratedXDCFiles          1회 호출
         0ms  SplitResourcesByCulture                    1회 호출
-        0ms  ComputeManifestInputsTargets               1회 호출
+        0ms  AssignTargetPaths                          1회 호출
         0ms  ComputeLinkInputsFromProject               1회 호출
         0ms  ComputeCLGeneratedLinkInputs               1회 호출
         0ms  ComputeCLOutputs                           1회 호출
@@ -41,119 +39,122 @@ C:\Users\khj\Desktop\socket (2)\socket\server.c(151,5): warning C4996: 'sprintf'
         0ms  ComputeLegacyManifestEmbedding             1회 호출
         0ms  BuildLinkTraverse                          1회 호출
         0ms  BuildCompile                               1회 호출
-        0ms  AssignTargetPaths                          1회 호출
         0ms  AfterBuildCompileEvent                     1회 호출
+        0ms  _ResourceCompile                           1회 호출
+        0ms  _Manifest                                  1회 호출
+        0ms  RegisterOutput                             1회 호출
+        0ms  ResolvedXDCMake                            1회 호출
         0ms  MakeDirsForXdcMake                         1회 호출
-        0ms  ComputeCLCompileGeneratedSbrFiles          1회 호출
         0ms  IncrementalClean                           1회 호출
-        0ms  _CleanGetCurrentAndPriorFileWrites         1회 호출
         0ms  AfterBuild                                 1회 호출
         0ms  BuildLink                                  1회 호출
         0ms  _BuildLinkAction                           1회 호출
         0ms  PostBuildEvent                             1회 호출
         0ms  PrepareForRun                              1회 호출
+        0ms  CopyFilesToOutputDirectory                 1회 호출
         0ms  _CheckForCompileOutputs                    1회 호출
         0ms  _CopySourceItemsToOutputDirectory          1회 호출
-        0ms  _GetCopyToOutputDirectoryItemsFromThisProject   1회 호출
         0ms  _GetCopyToOutputDirectoryItemsFromTransitiveProjectReferences   1회 호출
-        0ms  _XdcMake                                   1회 호출
-        0ms  GetCopyToOutputDirectoryItems              1회 호출
+        0ms  GetCopyToOutputDirectoryXamlAppDefs        1회 호출
+        0ms  AfterResourceCompile                       1회 호출
         0ms  _PopulateCommonStateForGetCopyToOutputDirectoryItems   1회 호출
-        0ms  _Deploy                                    1회 호출
         0ms  _Appverifier                               1회 호출
         0ms  CreateSatelliteAssemblies                  1회 호출
-        0ms  CreateRecipeFile                           1회 호출
+        0ms  _GenerateSatelliteAssemblyInputs           1회 호출
         0ms  ContentFilesProjectOutputGroup             1회 호출
         0ms  MakeDirsForFxc                             1회 호출
         0ms  SatelliteDllsProjectOutputGroup            1회 호출
         0ms  BuiltProjectOutputGroup                    1회 호출
         0ms  _BscMake                                   1회 호출
         0ms  MakeDirsForBscMake                         1회 호출
-        0ms  GetCopyToOutputDirectoryXamlAppDefs        1회 호출
-        0ms  _ResourceCompile                           1회 호출
-        0ms  Build                                      1회 호출
+        0ms  ComputeCLCompileGeneratedSbrFiles          1회 호출
+        0ms  _XdcMake                                   1회 호출
+        0ms  _Deploy                                    1회 호출
         0ms  MakeDirsForResourceCompile                 1회 호출
-        0ms  CustomBuild                                1회 호출
-        0ms  AfterResourceCompile                       1회 호출
+        0ms  Build                                      1회 호출
+        0ms  _ClCompile                                 1회 호출
+        0ms  CopyFileToFolders                          1회 호출
+        0ms  _SplitProjectReferencesByFileExistence     1회 호출
+        0ms  ComputeCustomBuildOutput                   1회 호출
         0ms  SelectCustomBuild                          1회 호출
         0ms  _SelectedFiles                             1회 호출
+        0ms  BeforeResourceCompile                      1회 호출
+        0ms  PreBuildEvent                              1회 호출
         0ms  BeforeBuildGenerateSources                 1회 호출
         0ms  BuildGenerateSourcesTraverse               1회 호출
+        0ms  _GetProjectReferenceTargetFrameworkProperties   1회 호출
         0ms  ResolveReferences                          1회 호출
-        0ms  AfterResolveReferences                     1회 호출
+        0ms  PrepareProjectReferences                   1회 호출
         0ms  ResolveAssemblyReferences                  1회 호출
         0ms  ExpandSDKReferences                        1회 호출
         0ms  ResolveSDKReferences                       1회 호출
-        0ms  SetCABuildNativeEnvironmentVariables       1회 호출
-        0ms  GetResolvedWinMD                           1회 호출
-        0ms  GetReferenceAssemblyPaths                  1회 호출
-        0ms  GetFrameworkPaths                          1회 호출
         0ms  ResolveProjectReferences                   1회 호출
-        0ms  PrepareProjectReferences                   1회 호출
-        0ms  _GetProjectReferenceTargetFrameworkProperties   1회 호출
-        0ms  _SplitProjectReferencesByFileExistence     1회 호출
-        0ms  BeforeResolveReferences                    1회 호출
-        0ms  _PrepareForReferenceResolution             1회 호출
-        0ms  _PrepareForBuild                           1회 호출
-        0ms  SetTelemetryEnvironmentVariables           1회 호출
+        0ms  GetFrameworkPaths                          1회 호출
+        0ms  SetCABuildNativeEnvironmentVariables       1회 호출
+        0ms  _CheckWindowsSDKInstalled                  1회 호출
         0ms  _Xsd                                       1회 호출
         0ms  MakeDirsForMidl                            1회 호출
-        0ms  ComputeCustomBuildOutput                   1회 호출
-        0ms  AfterMidl                                  1회 호출
-        0ms  BeforeResourceCompile                      1회 호출
-        0ms  _ClCompile                                 1회 호출
-        0ms  AfterClCompile                             1회 호출
+        0ms  BeforeResolveReferences                    1회 호출
+        0ms  ComputeCLInputPDBName                      1회 호출
         0ms  SelectClCompile                            1회 호출
         0ms  MakeDirsForCl                              1회 호출
+        0ms  FixupCLCompileOptions                      1회 호출
         0ms  WarnCompileDuplicatedFilename              1회 호출
         0ms  ComputeReferenceCLInput                    1회 호출
         0ms  GetReferencedVCProjectsInfo                1회 호출
-        0ms  ComputeMIDLGeneratedCompileInputs          1회 호출
-        0ms  ComputeCLInputPDBName                      1회 호출
-        0ms  BeforeClCompile                            1회 호출
         0ms  FindReferenceAssembliesForReferences       1회 호출
+        0ms  ComputeMIDLGeneratedCompileInputs          1회 호출
+        0ms  AfterClCompile                             1회 호출
+        0ms  BeforeClCompile                            1회 호출
+        0ms  _PrepareForBuild                           1회 호출
         0ms  BuildGenerateSources                       1회 호출
         0ms  _BuildGenerateSourcesAction                1회 호출
-        0ms  _Midl                                      1회 호출
         0ms  AfterBuildGenerateSourcesEvent             1회 호출
-        0ms  BuildCompileTraverse                       1회 호출
         0ms  AfterBuildGenerateSources                  1회 호출
-        1ms  _CheckWindowsSDKInstalled                  1회 호출
-        1ms  ComputeLinkImportLibraryOutputsForClean    1회 호출
-        1ms  AssignProjectConfiguration                 1회 호출
-        1ms  CopyFileToFolders                          1회 호출
-        1ms  CopyFilesToOutputDirectory                 1회 호출
-        1ms  MakeDirsForLink                            1회 호출
+        0ms  _PrepareForReferenceResolution             1회 호출
+        0ms  _Midl                                      1회 호출
+        0ms  AfterMidl                                  1회 호출
+        0ms  BuildCompileTraverse                       1회 호출
+        0ms  SetTelemetryEnvironmentVariables           1회 호출
+        1ms  GetResolvedWinMD                           1회 호출
+        1ms  _CleanGetCurrentAndPriorFileWrites         1회 호출
+        1ms  GetReferenceAssemblyPaths                  1회 호출
         1ms  _CheckForInvalidConfigurationAndPlatform   1회 호출
-        1ms  _GenerateSatelliteAssemblyInputs           1회 호출
-        1ms  PreBuildEvent                              1회 호출
-        1ms  FixupCLCompileOptions                      1회 호출
+        1ms  CreateRecipeFile                           1회 호출
+        1ms  MakeDirsForLink                            1회 호출
+        1ms  FinalizeBuildStatus                        1회 호출
+        1ms  AfterResolveReferences                     1회 호출
+        1ms  CustomBuild                                1회 호출
+        1ms  ComputeManifestInputsTargets               1회 호출
+        1ms  ComputeCLCompileGeneratedXDCFiles          1회 호출
+        1ms  AssignProjectConfiguration                 1회 호출
+        1ms  GetCopyToOutputDirectoryItems              1회 호출
+        1ms  _GetCopyToOutputDirectoryItemsFromThisProject   1회 호출
         2ms  InitializeBuildStatus                      1회 호출
         2ms  PrepareForBuild                            1회 호출
-        2ms  FinalizeBuildStatus                        1회 호출
         2ms  SetBuildDefaultEnvironmentVariables        1회 호출
-      122ms  Link                                       1회 호출
-      394ms  ClCompile                                  1회 호출
+      280ms  Link                                       1회 호출
+      624ms  ClCompile                                  1회 호출
 
 작업 성능 요약:
         0ms  Message                                    3회 호출
         0ms  FindUnderPath                              5회 호출
-        0ms  MSBuild                                    1회 호출
         0ms  ConvertToAbsolutePath                      1회 호출
-        0ms  CheckVCToolsetVersion                      1회 호출
-        0ms  ReadLinesFromFile                          2회 호출
-        0ms  WriteLinesToFile                           1회 호출
-        0ms  CallTarget                                 2회 호출
-        0ms  RemoveDuplicates                           2회 호출
-        0ms  AssignTargetPath                           7회 호출
-        0ms  AssignCulture                              1회 호출
-        0ms  GenerateDesktopDeployRecipe                1회 호출
         0ms  CreateItem                                 2회 호출
-        1ms  AssignProjectConfiguration                 1회 호출
+        0ms  AssignCulture                              1회 호출
+        0ms  AssignTargetPath                           7회 호출
+        0ms  Delete                                     2회 호출
+        0ms  CheckVCToolsetVersion                      1회 호출
+        0ms  MSBuild                                    1회 호출
+        0ms  ReadLinesFromFile                          2회 호출
+        1ms  RemoveDuplicates                           2회 호출
+        1ms  WriteLinesToFile                           1회 호출
+        1ms  GenerateDesktopDeployRecipe                1회 호출
+        1ms  MakeDir                                   10회 호출
         1ms  GetOutOfDateItems                          3회 호출
-        1ms  Delete                                     2회 호출
+        1ms  AssignProjectConfiguration                 1회 호출
+        1ms  CallTarget                                 2회 호출
         2ms  Touch                                      2회 호출
-        2ms  MakeDir                                   10회 호출
         2ms  SetEnv                                     8회 호출
-      122ms  Link                                       1회 호출
-      394ms  CL                                         1회 호출
+      280ms  Link                                       1회 호출
+      624ms  CL                                         1회 호출
