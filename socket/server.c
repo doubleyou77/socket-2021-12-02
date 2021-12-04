@@ -1,18 +1,23 @@
-#include "common.h"
+ï»¿#include "common.h"
 #define PORT_NUM      10200
 #define BLOG_SIZE     5
 #define MAX_MSG_LEN   256
 SOCKET SetTCPServer(short pnum, int blog);
 void EventLoop(SOCKET sock);
+char systemmessage[MAX_MSG_LEN];
+char nicknamesave[10][MAX_MSG_LEN] = { "ê¸°ë³¸ë‹‰ë„¤ìž„", };
 
 int main()
 {
+    for (int i = 0; i < 10; i++) {
+        strcpy(nicknamesave[i], "ê¸°ë³¸ë‹‰ë„¤ìž„");
+    }
     WSADATA wsadata;
     WSAStartup(MAKEWORD(2, 2), &wsadata);
     SOCKET sock = SetTCPServer(PORT_NUM, BLOG_SIZE);
     if (sock == -1)
     {
-        perror("´ë±â ¼ÒÄÏ ¿À·ù");
+        perror("ëŒ€ê¸° ì†Œì¼“ ì˜¤ë¥˜");
     }
     else
     {
@@ -97,30 +102,45 @@ void AcceptProc(int index)
 
     if (cnt == FD_SETSIZE)
     {
-        printf("Ã¤ÆÃ ¹æ¿¡ ²Ë Ã¡´Ù!\n",
-            inet_ntoa(cliaddr.sin_addr), ntohs(cliaddr.sin_port));
         closesocket(dosock);
         return;
     }
     AddNetworkEvent(dosock, FD_READ | FD_CLOSE);
+    
+    sprintf(systemmessage, "[ì‹œìŠ¤í…œ] %s:%dë‹˜ì´ ìž…ìž¥í•˜ì…¨ìŠµë‹ˆë‹¤. 'ì±„íŒ… ê·¸ë§Œí•˜ê¸°'ë¡œ ì±„íŒ…ì°½ì—ì„œ ë‚˜ê°€ì‹¤ìˆ˜ìžˆìŠµë‹ˆë‹¤.", inet_ntoa(cliaddr.sin_addr), ntohs(cliaddr.sin_port));
+    for (int i = 1; i < cnt; i++)
+        {
+            send(sock_base[i], systemmessage, MAX_MSG_LEN, 0);
+        }
 
-    printf("%s:%d ÀÔÀå\n", inet_ntoa(cliaddr.sin_addr), ntohs(cliaddr.sin_port));
 }
-char nicknamesave[10][MAX_MSG_LEN];
-char systemmessage[MAX_MSG_LEN];
+
 
 void ReadProc(int index)
 {
-    char nickname[MAX_MSG_LEN] = "±âº»´Ð³×ÀÓ";
+    //char nickname[MAX_MSG_LEN] = "ê¸°ë³¸ë‹‰ë„¤ìž„";
     char msg[MAX_MSG_LEN];
     recv(sock_base[index], msg, MAX_MSG_LEN, 0);
-    if (strstr(msg, "/´Ð³×ÀÓ") != NULL) {
-        Remove(msg, "/´Ð³×ÀÓ ");
-        strcpy(nickname, msg);
-        strcpy(nicknamesave[index], nickname);
-        printf("´Ð³×ÀÓ ¼öÁ¤ : %s\n", nicknamesave[index]);
-        sprintf(systemmessage, "[½Ã½ºÅÛ] ´Ð³×ÀÓÀÌ %s·Î º¯°æµÇ¾ú½À´Ï´Ù.", nicknamesave[index]);
+    if (strstr(msg, "/ë‹‰ë„¤ìž„") != NULL) {
+        Remove(msg, "/ë‹‰ë„¤ìž„ ");
+        /*strcpy(nickname, msg);*/
+        strcpy(nicknamesave[index], msg);
+        printf("ë‹‰ë„¤ìž„ ìˆ˜ì • : %s\n", nicknamesave[index]);
+        sprintf(systemmessage, "[ì‹œìŠ¤í…œ] ë‹‰ë„¤ìž„ì´ %së¡œ ë³€ê²½ë˜ì—ˆìŠµë‹ˆë‹¤.", nicknamesave[index]);
         send(sock_base[index], systemmessage, MAX_MSG_LEN, 0);
+    }
+    else if (strstr(msg, "/ì´ëª¨í‹°ì½˜") != NULL) {
+        if(strstr(msg, "surprise") != NULL) {
+            for (int i = 1; i < cnt; i++)
+            {
+                send(sock_base[i], "?(Â°â–¡ Â°)?", MAX_MSG_LEN, 0);
+            }
+        }
+        else {
+            Remove(msg, "/ì´ëª¨í‹°ì½˜");
+            sprintf(systemmessage, "[ì‹œìŠ¤í…œ] ê·¸ë¦¼ì´ëª¨í‹°ì½˜ì˜ ì¢…ë¥˜ë¡œëŠ” \n/ì´ëª¨í‹°ì½˜ surprise ?(Â°â–¡ Â°)?ì´ìžˆìŠµë‹ˆë‹¤.");
+            send(sock_base[index], systemmessage, MAX_MSG_LEN, 0);
+        }
     }
     else {
         SOCKADDR_IN cliaddr = { 0 };
@@ -143,7 +163,6 @@ void CloseProc(int index)
     SOCKADDR_IN cliaddr = { 0 };
     int len = sizeof(cliaddr);
     getpeername(sock_base[index], (SOCKADDR*)&cliaddr, &len);
-    printf("[%s:%d] \n", inet_ntoa(cliaddr.sin_addr), ntohs(cliaddr.sin_port));
 
     closesocket(sock_base[index]);
     WSACloseEvent(hev_base[index]);
@@ -153,7 +172,7 @@ void CloseProc(int index)
     hev_base[index] = hev_base[cnt];
 
     char msg[MAX_MSG_LEN];
-    sprintf(msg, "%s´ÔÀÌ ³ª°¡¼Ì½À´Ï´Ù\n", nicknamesave[index]);
+    sprintf(msg, "%së‹˜ì´ ë‚˜ê°€ì…¨ìŠµë‹ˆë‹¤\n", nicknamesave[index]);
     for (int i = 1; i < cnt; i++)
     {
         send(sock_base[i], msg, MAX_MSG_LEN, 0);

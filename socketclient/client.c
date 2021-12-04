@@ -1,7 +1,6 @@
 #include "common.h"
 #define PORT_NUM      10200
 #define MAX_MSG_LEN   256
-#define SERVER_IP     "192.168.153.1"//서버 IP 주소 /수정하기
 
 void RecvThreadPoint(void* param);
 int count = 0;
@@ -10,6 +9,8 @@ int main()
 {
     WSADATA wsadata;
     WSAStartup(MAKEWORD(2, 2), &wsadata);
+    IN_ADDR addr;
+    addr = GetDefaultMyIP(); //ip 불러오기
     SOCKET sock;
     sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
     if (sock == -1)
@@ -19,7 +20,7 @@ int main()
 
     SOCKADDR_IN servaddr = { 0 };//소켓 주소
     servaddr.sin_family = AF_INET;
-    servaddr.sin_addr.s_addr = inet_addr(SERVER_IP);
+    servaddr.sin_addr.s_addr = inet_addr(inet_ntoa(addr)); //ip 받아오기
     servaddr.sin_port = htons(PORT_NUM);
 
     int re = 0;
@@ -40,7 +41,7 @@ int main()
         printf("입력중... ");
         gets_s(msg, MAX_MSG_LEN);       //입력
         send(sock, msg, sizeof(msg), 0);//송신
-        if (strcmp(msg, "exit") == 0)
+        if (strcmp(msg, "채팅 그만하기") == 0)
         {
             break;
         }
@@ -63,8 +64,11 @@ void RecvThreadPoint(void* param)
         gotoxy(0, count);
         printf("%s\n", msg);            //출력
         count++;
+        if (strlen(msg) > 70) {
+            count++;
+        }
         gotoxy(50, count2);
-        printf("                          ");
+        printf("                                                                                                                        ");
         if (count >= 30)
             count2++;
         gotoxy(50, count2);
