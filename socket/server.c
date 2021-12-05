@@ -133,7 +133,8 @@ void ReadProc(int index)
         if(strstr(msg, "surprise") != NULL) {
             for (int i = 1; i < cnt; i++)
             {
-                send(sock_base[i], "?(°□ °)?", MAX_MSG_LEN, 0);
+                strcpy(nicknamesave[index], "?(°□ °)?");
+                send(sock_base[i], systemmessage, MAX_MSG_LEN, 0);
             }
         }
         else {
