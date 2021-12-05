@@ -1,6 +1,7 @@
 #include "common.h"
 #define PORT_NUM      10200
 #define MAX_MSG_LEN   256
+char systemmessage[MAX_MSG_LEN];
 
 void RecvThreadPoint(void* param);
 int count = 0;
@@ -41,9 +42,17 @@ int main()
         printf("입력중... ");
         gets_s(msg, MAX_MSG_LEN);       //입력
         send(sock, msg, sizeof(msg), 0);//송신
-        if (strcmp(msg, "채팅 그만하기") == 0)
-        {
-            break;
+        if (strstr(msg, "/친구요청") != NULL) {
+            gotoxy(0, count);
+            count++;
+            if (strlen(msg) > 100) {
+                count++;
+            }
+            gotoxy(50, count2);
+            printf("                                                                                                                        ");
+            if (count >= 30)
+                count2++;
+            gotoxy(50, count2);
         }
     }
     closesocket(sock);  
@@ -58,13 +67,12 @@ void RecvThreadPoint(void* param)
 
     SOCKADDR_IN cliaddr = { 0 };
     int len = sizeof(cliaddr);
-
     while (recv(sock, msg, MAX_MSG_LEN, 0) > 0)
     {
         gotoxy(0, count);
         printf("%s\n", msg);            //출력
         count++;
-        if (strlen(msg) > 70) {
+        if (strlen(msg) > 100) {
             count++;
         }
         gotoxy(50, count2);
@@ -73,5 +81,6 @@ void RecvThreadPoint(void* param)
             count2++;
         gotoxy(50, count2);
     }
+
     closesocket(sock);
 }

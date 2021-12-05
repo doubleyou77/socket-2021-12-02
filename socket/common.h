@@ -1,4 +1,6 @@
 #pragma once
+#define _CRT_SECURE_NO_WARNINGS
+#define _WINSOCK_DEPRECATED_NO_WARNINGS
 #include <WinSock2.h>
 #include <Windows.h>
 #include <process.h>
@@ -8,6 +10,8 @@
 #include <malloc.h>
 #include <stdbool.h>
 #include<windows.h>
+
+
 
 #pragma comment(lib, "ws2_32")
 IN_ADDR GetDefaultMyIP();

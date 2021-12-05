@@ -7,6 +7,13 @@ void EventLoop(SOCKET sock);
 char systemmessage[MAX_MSG_LEN];
 char nicknamesave[10][MAX_MSG_LEN] = { "기본닉네임", };
 
+struct friends {
+    char nickname[MAX_MSG_LEN];
+    char friend[10][MAX_MSG_LEN];
+    int friendlist;
+};
+struct friends friend;
+
 int main()
 {
     for (int i = 0; i < 10; i++) {
@@ -114,7 +121,9 @@ void AcceptProc(int index)
         }
 
 }
-
+char waitingfriend[MAX_MSG_LEN];
+char waitingname[MAX_MSG_LEN];
+char friendlist[MAX_MSG_LEN];
 
 void ReadProc(int index)
 {
@@ -142,6 +151,34 @@ void ReadProc(int index)
             sprintf(systemmessage, "[시스템] 그림이모티콘의 종류로는 \n/이모티콘 surprise ?(°□ °)?이있습니다.");
             send(sock_base[index], systemmessage, MAX_MSG_LEN, 0);
         }
+    }
+    else if (strstr(msg, "/친구요청") != NULL) {
+        Remove(msg, "/친구요청 ");
+        strcpy(waitingfriend, msg);
+        for (int i = 0; i < 10; i++) {
+            if (strcmp(nicknamesave[i], msg) == 0) {
+                sprintf(systemmessage, "[시스템] 친구요청이 왔습니다.");
+                send(sock_base[i], systemmessage, MAX_MSG_LEN, 0);
+                strcpy(waitingname, nicknamesave[index]);
+                Remove(msg, msg);
+                continue;
+            }
+        }
+    }
+    else if (strstr(msg, "/친구수락") != NULL) {
+        strcpy(friend.nickname, waitingname);
+        friend.friendlist++;
+        strcpy(friend.friend[friend.friendlist], friend.nickname);
+        for (int i = 0; i < friend.friendlist; i++) {
+            strcat(friendlist, friend.friend[friend.friendlist]);
+        }
+        sprintf(systemmessage, "[시스템] %s과 친구가 되었습니다.", friend.nickname);
+        send(sock_base[index], systemmessage, MAX_MSG_LEN, 0);
+    }
+    else if (strstr(msg, "친구목록") != NULL) {
+        Remove(msg, "/친구목록");
+        sprintf(systemmessage, "%s", friendlist);
+        send(sock_base[index], systemmessage, MAX_MSG_LEN, 0);
     }
     else {
         SOCKADDR_IN cliaddr = { 0 };
