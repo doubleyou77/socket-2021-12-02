@@ -140,15 +140,16 @@ void ReadProc(int index)
     }
     else if (strstr(msg, "/이모티콘") != NULL) {
         if(strstr(msg, "surprise") != NULL) {
+            char smsg[MAX_MSG_LEN];
             for (int i = 1; i < cnt; i++)
             {
-                strcpy(nicknamesave[index], "?(°□ °)?");
-                send(sock_base[i], systemmessage, MAX_MSG_LEN, 0);
+                sprintf(smsg, "[%s]:%s", nicknamesave[index], "?(°□ °)?");
+                send(sock_base[i], smsg, MAX_MSG_LEN, 0);
             }
         }
         else {
             Remove(msg, "/이모티콘");
-            sprintf(systemmessage, "[시스템] 그림이모티콘의 종류로는 \n/이모티콘 surprise ?(°□ °)?이있습니다.");
+            sprintf(systemmessage, "[시스템] 그림이모티콘의 종류로는 /이모티콘 surprise ?(°□ °)?이있습니다.");
             send(sock_base[index], systemmessage, MAX_MSG_LEN, 0);
         }
     }
